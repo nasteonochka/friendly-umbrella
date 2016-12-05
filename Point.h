@@ -1,6 +1,4 @@
-//Point.h
-#include <iostream>
-using namespace std;
+#pragma once
 class Point{ 
 private:
 	float x_;
@@ -16,13 +14,18 @@ public:
 		y_ = b;
 		//cout << x_ << ' ' << y_;
 	}
-	
+	Point:: Point(const Point& p){
+	x_ = p.x_;
+	y_ = p.y_;
+	} 
 	~Point(){}
 	friend bool isEqual(const Point & p1, const Point & p2);
-	friend float distance(const Point & p1, const Point & p2);
+	friend float dist(const Point & p1, const Point & p2);
+	
 	void show();
 	float getX();
 	float getY(); 
 	void setX(float x);
 	void setY(float y);
+	
 }; 
