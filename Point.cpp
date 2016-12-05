@@ -20,10 +20,6 @@ void Point:: setY(float y){
 bool isEqual(const Point & p1, const Point & p2){
 	return (p1.x_ == p2.x_)&&(p1.y_ == p2.y_);
 }
-float distance(const Point & p1, const Point & p2){
-	return (p1.x_ - p2.x_)*(p1.x_ - p2.x_) + (p1.y_ - p2.y_)*(p1.y_ - p2.y_);
-}
-Point :: Point(const Point& p){
-	x_ = p.x_;
-	y_ = p.y_;
+ float dist(const Point & p1, const Point & p2){
+	return sqrt((p1.x_ - p2.x_)*(p1.x_ - p2.x_) + (p1.y_ - p2.y_)*(p1.y_ - p2.y_));
 }
