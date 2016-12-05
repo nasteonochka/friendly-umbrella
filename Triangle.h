@@ -1,7 +1,6 @@
-#include <iostream>
 #include "Point.h"
-using namespace std;
 class Point;
+#pragma once
 class Triangle{ 
 private:
 	Point a_;
@@ -25,18 +24,23 @@ public:
 		b_.setX(b.getY());
 		c_.setX(c.getY());
 		//cout << x_ << ' ' << y_;
+	} 
+	Triangle :: Triangle(const Triangle & t){
+	a_ = t.a_;
+	b_ = t.b_;
+	c_ = t.c_;
 	}
-	//констр коп 
 	~Triangle(){}
 	friend bool isEqualSquare(const Triangle & t1, const Triangle & t2);
-	friend void move(const Triangle & p, float x, float y);
+	//friend void move(const Triangle & p, float x, float y);
 	void show();
 	Point getA();
 	Point getB(); 
 	Point getC(); 
-	void setA(Point a);
-	void setB(Point b);
-	void setC(Point c);
+	void setA(const Point& a);
+	void setB(const Point& b);
+	void setC(const Point& c);
 	bool isTriangle();
-	float perimeter();
-}; 
+	float perimeter(); 
+	  
+};
